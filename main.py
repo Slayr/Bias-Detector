@@ -376,8 +376,9 @@ def _result_panel(r: DetectionResult) -> Panel:
             # transformers-interpret will give high positive/negative to driving factors.
             # Usually abs(score) > 0.1 is a strong driving signal
             if abs(score) > 0.1 and word not in ["[CLS]", "[SEP]"]: 
-                word_clean = word.replace('Ġ', '').replace(' ', '') # Clean token marks
-                if word_clean:
+                word_clean = word.replace('Ġ', '').replace(' ', '').replace('▁', '') # Clean token marks
+                # Filter out single-character punctuation
+                if word_clean and any(c.isalnum() for c in word_clean):
                     rationale_text += f" • [red]{word_clean}[/red] ({score:.2f})\n"
 
     return Panel(
