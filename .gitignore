@@ -1,0 +1,27 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+bin/
+lib/
+include/
+*.pyc
+__pycache__/
+
+# Data and Models
+data/
+models/
+logs/
+*.joblib
+*.log
+*.xlsx
+*.csv
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Git
+.git/

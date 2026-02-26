@@ -1,0 +1,13 @@
+ollama
+pandas
+scikit-learn
+openpyxl
+joblib
+rich
+transformers
+transformers-interpret
+datasets
+peft
+torch
+numpy
+accelerate
